@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anwararcoder/anwararcoder.get"
+    "url": "git+https://github.com/anwararcoder/ar-coder-theme-wp.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/anwararcoder/anwararcoder.get/issues"
+    "url": "https://github.com/anwararcoder/ar-coder-theme-wp.git/issues"
   },
-  "homepage": "https://github.com/anwararcoder/anwararcoder.get#readme",
+  "homepage": "https://github.com/anwararcoder/ar-coder-theme-wp.git#readme",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.14",
     "autoprefixer": "^10.4.7",
