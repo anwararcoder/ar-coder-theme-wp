@@ -1,0 +1,11 @@
+{# templates/project-email.twig #}
+<html>
+<body>
+    <h2 style="color: #333;">A new project has been added to your site</h2>
+    <img src"{{ post.thumbnail.src }}" alt="{{ post_title }}" />
+    <p><strong>Title:</strong> {{ post_title }}</p>
+    <p><strong>Date Published:</strong> {{ post_date }}</p>
+    <p><strong>Details:</strong><br/>{{ post_content }}</p>
+    <p><strong>View the project:</strong> <a href="{{ post_url }}">{{ post_url }}</a></p>
+</body>
+</html>

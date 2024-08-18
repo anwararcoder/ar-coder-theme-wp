@@ -1,0 +1,412 @@
+/*
+::
+:: Theme Name: AR-Coder Theme
+:: Email: nourramadan144@gmail.com
+:: Author URI: http://ar-coder.com/
+:: Author: AR-Coder
+:: Version: 1.0
+:: 
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* :: Google Roboto Font & Google Saira Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Saira:wght@400;500;600;700;800;900&display=swap');
+
+html{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* :: All Transition */
+* {
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* :: Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    color: #2c3e50;
+}
+
+.container,
+.container-fluid {
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+::-moz-selection {
+    background-color: #3498db;
+    color: #FFF;
+    text-shadow: none;
+}
+
+::selection {
+    background-color: #3498db;
+    color: #FFF;
+    text-shadow: none;
+}
+
+::-webkit-input-placeholder {
+    color: #9B9B9B;
+    font-size: 12px;
+    font-weight: 400;
+    display: inline-block;
+    text-transform: capitalize;
+    position: relative;
+}
+
+::-moz-placeholder {
+    color: #9B9B9B;
+    font-size: 12px;
+    font-weight: 400;
+    display: inline-block;
+    text-transform: capitalize;
+    position: relative;
+}
+
+:-ms-input-placeholder {
+    color: #9B9B9B;
+    font-size: 12px;
+    font-weight: 400;
+    display: inline-block;
+    text-transform: capitalize;
+    position: relative;
+}
+
+::-ms-input-placeholder {
+    color: #9B9B9B;
+    font-size: 12px;
+    font-weight: 400;
+    display: inline-block;
+    text-transform: capitalize;
+    position: relative;
+}
+
+::placeholder {
+    color: #9B9B9B;
+    font-size: 12px;
+    font-weight: 400;
+    display: inline-block;
+    text-transform: capitalize;
+    position: relative;
+}
+
+button {
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+
+a,
+a:hover,
+a:focus,
+button:focus {
+    text-decoration: none;
+    color: #2c3e50;
+}
+
+/* :: Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Saira', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+p {
+    color: #9B9B9B;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    line-height: 25px;
+}
+
+/* =========================== Btn AR-Coder =========================== */
+.btn-1{
+    text-transform: capitalize;
+    position: relative;
+    text-align: center;
+    background-color: #3498db;
+    color: #FFF;
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 180px;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 15px;
+    border-radius: 3px;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    display: inline-grid;
+    cursor: pointer;
+    transition: color 1s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+  }
+  
+  .btn-1 span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .btn-1:after,
+  .btn-1:before{
+    content: '';
+    position: absolute;
+    height: 50%;
+    width: 0;
+    background-color: #3498db;
+    z-index: 1;
+    transition: .3s cubic-bezier(.785,.135,.15,.86);
+  }
+  
+  .btn-1:after{
+    top: 0;
+    left: 0;
+    right: auto;
+  }
+  
+  .btn-1:hover:after{
+    width: 100%;
+    right: 0;
+    left: auto;
+  }
+  
+  .btn-1:before{
+    bottom: 0;
+    right: 0;
+    left: auto;
+  }
+  
+  .btn-1:hover:before{
+    width: 100%;
+    left: 0;
+    right: auto;
+  }
+  
+  .btn-1:hover span{
+    color: #3498db;
+  }
+  
+  .btn-1:hover:after,
+  .btn-1:hover:before{
+    background-color: #FFF;
+  }
+  
+  .btn-2{
+    background-color: #2c3e50;
+  }
+  
+  .btn-2 span{
+    color: #3498db;
+  }
+  
+  .btn-2:hover span{
+    color: #FFF;
+  }
+  
+  .btn-2:hover:after,
+  .btn-2:hover:before{
+    background-color: #3498db;
+  }
+  
+  .btn-3{
+    background-color: #3498db;
+  }
+  
+  .btn-3 span{
+    color: #FFF;
+  }
+  
+  .btn-3:hover span{
+    color: #3498db;
+  }
+  
+  .btn-3:hover:after,
+  .btn-3:hover:before{
+    background-color: #2c3e50;
+  }
+  
+  .btn-4{
+    background-color: #FFF;
+  }
+  
+  .btn-4 span{
+    color: #3498db;
+  }
+  
+  .btn-4:hover span{
+    color: #3498db;
+  }
+  
+  .btn-4:hover:after,
+  .btn-4:hover:before{
+    background-color: #2c3e50;
+  }
+
+    
+  .btn-5{
+    background-color: #FFF;
+  }
+  
+  .btn-5 span{
+    color: #3498db;
+  }
+  
+  .btn-5:hover span{
+    color: #FFF;
+  }
+  
+  .btn-5:hover:after,
+  .btn-5:hover:before{
+    background-color: #3498db;
+  }
+/* :: =========================== Navbar =========================== */
+.hide {
+    transform: translateY(-110%);
+    transition: .3s
+}
+
+.nav-bar.active {
+    box-shadow: 0 0 10px 5px rgb(24 24 24 / 17%)
+}
+
+.nav-bar.active .topnavbar {
+    display: none
+}
+
+@media (max-width:1024px) {
+    .hide {
+        box-shadow: none;
+        transform: translateY(0);
+        transition: .3s
+    }
+
+    .nav-bar-menu.active .content,
+    .nav-bar.active.hide {
+        box-shadow: 0 0 10px 5px rgb(24 24 24 / 17%)
+    }
+
+    .nav-bar-menu {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -400px;
+        max-width: 400px;
+        z-index: 999999;
+        border-radius: 0;
+        height: 100vh;
+        max-height: none;
+        background: #fff
+    }
+
+    .nav-bar-menu.active {
+        left: 0
+    }
+
+    .nav-bar-menu .content {
+        position: relative;
+        height: 100%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between
+    }
+
+    .nav-bar-menu .content .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 60px 40px 40px
+    }
+
+    .nav-bar-menu .content .end {
+        display: block
+    }
+
+    .nav-bar-menu.active .cancel-nav-bar {
+        position: fixed;
+        background: #fff;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        opacity: .3;
+        cursor: pointer
+    }
+
+    .nav-bar-menu .content ul.list {
+        max-height: 350px;
+        overflow-y: auto;
+        margin: 0 40px !important;
+        padding: 0 !important;
+        width: auto
+    }
+
+    .nav-bar-menu .content ul.list>li {
+        margin: 0
+    }
+
+    .nav-bar-menu .content ul.list>li>a {
+        width: 100%
+    }
+
+    .nav-bar-menu .content ul.list>li .level-2 {
+        width: 96% !important;
+        max-width: unset;
+        min-width: auto;
+        transform: unset;
+        left: auto;
+        right: auto
+    }
+
+    .nav-bar-menu .content ul.list>li .level-2:after {
+        right: auto;
+        left: 30px
+    }
+}
+
+@media (max-width:640px) {
+    .nav-bar-menu {
+        width: 100%;
+        max-width: none;
+        left: -100%
+    }
+}
+
+@media (max-height:700px) {
+    .nav-bar-menu .content ul.list {
+        max-height: 150px
+    }
+}
+
+table.fixed{
+  position: relative !important;
+
+}

@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<section class="py-[100px] relative">
+    <div class="container px-[15px] mx-auto">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 mb-[50px]">
+            <div>
+                <h1 class="capitalize font-[600] leading-[1.2] text-[45px]">{{ category_title }}</h1>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[50px]">
+            {% for item in projects %}
+                <div>
+                    <a href="{{item.link ?: '#'}}" class="group flex flex-col gap-[25px]">
+                        <img class="block w-full object-cover object-top rounded-[8px] border-[#DDD] border-[1px] group-hover:shadow-xl" src="{{ item.thumbnail.src | towebp ?: theme.link ~ '/assets/images/placeholder.png' }}" alt="Gazolin" style=" aspect-ratio: 2/1; ">
+                        <h4 class="text-[#2c3e50] group-hover:text-[#3498db] text-center text-[25px] font-[700] capitalize">
+                            {{ item.title }}
+                        </h4>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+{% endblock %}

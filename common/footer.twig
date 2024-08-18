@@ -1,0 +1,128 @@
+{# :: Footer #}
+<footer class="border-t-[1px] border-[#DDD] pt-[100px]">
+    <div class="container mx-auto px-[15px]">
+        <div class="grid grid-cols-1 gap-[50px] md:grid-cols-2 lg:grid-cols-12 pb-[100px]">
+            <div class="col-span-1 md:col-span-1 lg:col-span-4 xl:col-span-5">
+                <div>
+                    <h1 class="capitalize font-[600] text-[25PX] text-[#9B9B9B] text-[35px] xl:pr-[200px] leading-[1.6]">
+                        Hi I’m, <span class="text-[#3498db]">Anwar Ramadan</span> Front End Engineer
+                    </h1>
+                </div>
+            </div>
+            <div class="col-span-1 md:col-span-1 lg:col-span-8 xl:col-span-7">
+                <div>
+                    <div class="grid grid-cols-1 gap-[30px] md:grid-cols-2 lg:grid-cols-3">
+                        <div>
+                            <h3 class="mb-[25px] text-[20px] font-[600] capitalize leading-[1]">Follow Us</h3>
+                            <ul class="flex flex-col gap-[10px]">
+                                {% if options.facebook %}
+                                <li>
+                                    <a class="capitalize inline-block text-[15px] font-[500] leading-[1] text-[#9B9B9B] transition-all duration-200 hover:pl-[5px] hover:text-[#3498db]" href="{{ options.facebook.url ?: "#" }}">facebook</a>
+                                </li>
+                                {% endif %}
+                                {% if options.twitter %}
+                                <li>
+                                    <a class="capitalize inline-block text-[15px] font-[500] leading-[1] text-[#9B9B9B] transition-all duration-200 hover:pl-[5px] hover:text-[#3498db]" href="{{ options.twitter.url ?: "#" }}">twitter</a>
+                                </li>
+                                {% endif %}
+                                {% if options.linkedin %}
+                                <li>
+                                    <a class="capitalize inline-block text-[15px] font-[500] leading-[1] text-[#9B9B9B] transition-all duration-200 hover:pl-[5px] hover:text-[#3498db]" href="{{ options.linkedin.url ?: "#" }}">linkedin</a>
+                                </li>
+                                {% endif %}
+                                {% if options.instagram %}
+                                <li>
+                                    <a class="capitalize inline-block text-[15px] font-[500] leading-[1] text-[#9B9B9B] transition-all duration-200 hover:pl-[5px] hover:text-[#3498db]" href="{{ options.instagram.url ?: "#" }}">instagram</a>
+                                </li>
+                                {% endif %}
+                                {% if options.behance %}
+                                <li>
+                                    <a class="capitalize inline-block text-[15px] font-[500] leading-[1] text-[#9B9B9B] transition-all duration-200 hover:pl-[5px] hover:text-[#3498db]" href="{{ options.behance.url ?: "#" }}">behance</a>
+                                </li>
+                                {% endif %}
+                                {% if options.youtube %}
+                                <li>
+                                    <a class="capitalize inline-block text-[15px] font-[500] leading-[1] text-[#9B9B9B] transition-all duration-200 hover:pl-[5px] hover:text-[#3498db]" href="{{ options.youtube.url ?: "#" }}">youtube</a>
+                                </li>
+                                {% endif %}
+                                {% if options.dribbble %}
+                                <li>
+                                    <a class="capitalize inline-block text-[15px] font-[500] leading-[1] text-[#9B9B9B] transition-all duration-200 hover:pl-[5px] hover:text-[#3498db]" href="{{ options.dribbble.url ?: "#" }}">dribbble</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="mb-[25px] text-[20px] font-[600] capitalize leading-[1]">Projects</h3>
+                            <ul class="flex flex-col gap-[10px]">
+                                {% for item in options.footer_links %}
+                                <li>
+                                    <a class="capitalize inline-block text-[15px] font-[500] leading-[1] text-[#9B9B9B] transition-all duration-200 hover:pl-[5px] hover:text-[#3498db]" href="{{ item.link.url ?: '#' }}">{{ item.link.title }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="col-span-1 md:col-span-2 lg:col-span-1">
+                            <h3 class="mb-[25px] text-[20px] font-[600] capitalize leading-[1]">Newsletter</h3>
+                            <form id="newsletterForm" class="relative">
+                                <div class="relative w-full">
+                                    <input id="email" type="email" placeholder="your email address..." class="bg-[#F5F5F5] h-[60px] w-full  px-[15px] rounded-[3px] border-[2px] border-[#F5F5F5] hover:border-[#3498db]" />
+                                    <button type="submit" class="btn-1 btn-3 w-full mt-[15px]" href="#projects"><span>Subscribe</span></button>
+                                </div>
+                                <div id="success-message" class="bg-green-500 text-white rounded-[3px] mt-[15px] text-center"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-[#9B9B9B] font-[500] text-[18px] pb-[50px]">
+            {{ options.copyright ?: '© 2024 All Rights Reserved by <a class="hover:text-[#3498db]" href="https://1.envato.market/AR-Coder">AR-Coder</a>' }}
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let formBox = document.getElementById('newsletterForm');
+        let successMessageContainer = document.getElementById('success-message');
+
+        formBox.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent page reload
+
+            var email = document.getElementById('email').value;
+
+            if (email.length <= 3) {
+                successMessageContainer.innerHTML = `<div class=" p-4 text-white rounded-[3px] mt-[15px] text-center bg-red-500">Email Empty</div>`;
+                successMessageContainer.style.display = 'block';
+                return;
+            }
+
+            fetch('/wp-admin/admin-ajax.php', {
+                    method: 'POST',
+                    body: new URLSearchParams({
+                        action: 'newsletter_form',
+                        email: email,
+                    }),
+                    headers: {
+                        'content-type': 'application/x-www-form-urlencoded',
+                    },
+                })
+                .then(response => response.json())
+                .then(response => {
+                    if (response.success) {
+                        successMessageContainer.innerHTML = `<div class="p-4">${response.message}</div>`;
+                        successMessageContainer.style.display = 'block';
+                    } else {
+                        successMessageContainer.innerHTML = `<div class="p-4 text-white rounded-[3px] mt-[15px] text-center bg-red-500">${response.message}</div>`;
+                        successMessageContainer.style.display = 'block';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    successMessageContainer.innerHTML = `<div class="p-4 text-white rounded-[3px] mt-[15px] text-center bg-red-500">An error occurred. Please try again later.</div>`;
+                    successMessageContainer.style.display = 'block';
+                });
+        });
+    });
+</script>

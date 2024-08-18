@@ -1,0 +1,78 @@
+{% extends "base.twig" %} 
+{% block content %}
+{# <h1>{{ categories | json_encode(constant('JSON_PRETTY_PRINT')) }}</h1> #}
+
+<section class="py-[100px] relative">
+    <div class="container px-[15px] mx-auto">
+
+        <div class="grid grid-cols-1 md:grid-cols-2">
+            <div>
+                {% if project.live_preview %}
+                    <a class="inline-block" target="_blank" href="{{project.live_preview}}">
+                        <h1 class="capitalize font-[600] leading-[1.2] text-[45px]">{{ project.title }}</h1>
+                    </a>
+                {% else %}
+                    <h1 class="capitalize font-[600] leading-[1.2] text-[45px]">{{ project.title }}</h1>
+                {% endif %}
+                <p class="capitalize block mt-[15px] text-[15px] font-[500] leading-[1] text-[#9B9B9B]">
+                    Categories:
+                    {% for category in categories %}
+                        <a class="text-[#3498db] hover:text-[#2c3e50]" href="{{ site.link }}/category/{{ category.slug }}">{{ category.name }}</a>
+                        {% if not loop.last %}
+                            & 
+                        {% endif %}
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-[50px] mt-[50px]">
+            <div class="col-span-1 lg:col-span-8">
+                <div>
+                    <div class="px-[30px] py-[54px] bg-[#f2f4f5] prose max-w-[100%]">
+                        <div class="border-[1px] border-[#3498db]/30 rounded-[3px] bg-[#FFF] p-[15px]">
+                            {% if project.live_preview %}
+                                <a class="block" target="_blank" href="{{project.live_preview}}">
+                                    <img class="rounded-[3px] m-0 w-full object-cover" src="{{ project.thumbnail.src | towebp ?: theme.link ~ '/assets/images/placeholder.png' }}" alt="{{ project.title }}" />
+                                </a>
+                            {% else %}
+                                <img class="rounded-[3px] m-0 w-full object-cover" src="{{ project.thumbnail.src | towebp ?: theme.link ~ '/assets/images/placeholder.png' }}" alt="{{ project.title }}" />
+                            {% endif %}
+                        </div>
+                        
+                        {{ project.content }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-1 lg:col-span-4">
+                <div class="sticky top-[120px]">
+                    <div class="bg-[#2c3e50] px-[30px] py-[45px] rounded-[3px]">
+                        <h4 class="font-[500] capitalize mb-[30px] text-white text-[24px]">
+                            important links
+                        </h4>
+                        {% if project.github_link %}
+                            <a class="btn-1 btn-5 w-full mb-[15px]" target="_blank" href="{{project.github_link}}"><span>GitHub Link</span></a>
+                        {% endif %}
+                        {% if project.live_preview %}
+                            <a class="btn-1 btn-1 w-full" target="_blank" href="{{project.live_preview}}"><span>Live Preview</span></a>
+                        {% endif %}
+
+                        {% if tags %}
+                            <div class="mt-[20px] flex flex-col gap-[20px]">
+                                <span class="text-[18px] font-[600] capitalize text-white leading-[1]">Tags : </span>
+                                <ul class="flex gap-[10px] max-w-[100%] flex-wrap">
+                                    {% for tag in tags %}
+                                        <li class="leading-[1]"><a class="flex capitalize items-center justify-center h-[35px] font-[500] leading-[1] bg-white text-[#2c3e50] px-[10px] hover:bg-[#3498db] hover:text-white rounded-[2px]" href="{{ site.link }}/tag/{{ tag.slug }}">{{ tag.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <p class="text-center text-[#9B9B9B] font-[500] text-[16px] mt-[20px] capitalize">thanks for viewing</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

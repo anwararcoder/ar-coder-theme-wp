@@ -1,0 +1,24 @@
+<!doctype html>
+<!--[if lt IE 9]><html class="no-js no-svg ie lt-ie9 lt-ie8 lt-ie7" {{ site.language_attributes }}> <![endif]-->
+<!--[if IE 9]><html class="no-js no-svg ie ie9 lt-ie9 lt-ie8" {{ site.language_attributes }}> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js no-svg" {{ site.language_attributes }}> <!--<![endif]-->
+	<head>
+		<meta charset="{{ site.charset }}"/>
+		<meta name="description" content="{{ site.description }}">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="author" href="{{ site.theme.link }}/humans.txt"/>
+		<link rel="pingback" href="{{ site.pingback_url }}"/>
+		<link
+		rel="profile" href="http://gmpg.org/xfn/11">
+		<!-- :: Favicon -->
+		<link rel="icon" type="image/png" href={{ options.favicon['url'] | towebp ?: '{{theme.link}}/assets/images/favicon.webp' }}>
+		{# Twitter Card Meta Tags #}
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@anwararcoder">
+		<meta name="twitter:title" content="{{ site.title }}">
+		<meta name="twitter:description" content="{{ site.description }}">
+		<meta name="twitter:image" content="{{ options.favicon['url'] | towebp }}">
+		{{function('wp_head')}}

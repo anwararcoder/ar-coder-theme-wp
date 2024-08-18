@@ -1,0 +1,9 @@
+<article>
+	Anwar
+	<h1 class="headline">{{post.title}}</h1>
+	<h2>{{ post.thumbnail.src|towebp }}</h2>
+	<img loading="lazy" src={{ post.thumbnail.src|towebp }}>
+	<div class="body">
+		{{post.content}}
+	</div>
+</article>

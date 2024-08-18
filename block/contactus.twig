@@ -1,0 +1,27 @@
+<style>
+    input.wpcf7-form-control,
+    textarea.wpcf7-form-control{
+        padding: 12px;
+        width: 100%;
+        font-size: 13px;
+        border-radius: 0px;
+        background-color: #f9f9f9;
+        border: 2px solid #ddd;
+        color: #9B9B9B;
+    }
+    .wpcf7-form-control-wrap{
+        display: block;
+    }
+    .contact-form-arcoder br{
+        display: none;
+    }
+</style>
+
+<section class="relative py-[100px]">
+  <div class="container mx-auto px-[15px]">
+    <div class="w-[max-content] mx-auto">
+    <h2 class="capitalize font-[600] leading-[1.2] text-[45px] mb-[50px] text-center">Contact US</h2>
+            {{ function('do_shortcode', fields.form ?: '[contact-form-7 id="1695f52" title="AR-Coder Form"]') }}
+    </div>
+  </div>
+</section>
